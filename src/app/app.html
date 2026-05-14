@@ -1,18 +1,28 @@
-<div class="container">
+<div class="video-container">
 
-  <h1>📝 spade code</h1>
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="vid.mp4" type="video/mp4">
+  </video>
 
-  <div class="input-box">
-    <input [(ngModel)]="newNote" placeholder="Enter your note..." />
-    <button (click)="addNote()">Add</button>
+  <!-- Overlay Content -->
+  <div class="container">
+
+    <h1>📝 spade code</h1>
+
+    <div class="input-box">
+      <input [(ngModel)]="newNote" placeholder="Enter your note..." />
+      <button (click)="addNote()">Add</button>
+    </div>
+
+    <h3>Saved Notes</h3>
+
+    <ul>
+      <li *ngFor="let note of notes">
+        {{ note[1] }}
+      </li>
+    </ul>
+
   </div>
-
-  <h3>Saved Notes</h3>
-
-  <ul>
-    <li *ngFor="let note of notes">
-      {{ note[1] }}
-    </li>
-  </ul>
 
 </div>
